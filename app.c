@@ -13,8 +13,8 @@ typedef struct {
     int mTab[100]; //rozmiar tablicy wybrany przez autora
     int max;
     int min;
-    int srednia;
-    int mediana;
+    float srednia;
+    float mediana;
 } struktura;
 
 //funkcja wypełniająca tablicę wartościami losowymi z zakresu 1-100000 (decyzja autora)
@@ -49,32 +49,31 @@ int min(int *tab, int size) {
 }
 
 //funkcja licząca średnią poprzez zsumowanie elementów i zwraca sumę podzieloną przez ilość elementów w tablicy
-int srednia(int *tab, int size) {
-    int i, suma = 0;
+float srednia(int *tab, int size) {
+    int i;
+    float suma = 0;
     for (i = 1; i < size; i++) {
-        suma += tab[i];
+        suma += (float) tab[i];
     }
-    return suma / size;
+    return suma / (float) size;
 }
 
 //funkcja licząca medianę
-int mediana(int *tab, int size) {
+float mediana(int *tab, int size) {
     int temp[size], i, j;
     memcpy(temp, tab, size * sizeof(tab[0])); //tworzenie kopii tablicy podanej w parametrze funkcji
+    //sortowanie bąbelkowo kopii
     for (i = 0; i < size - 1; i++) {
-        //
         for (j = 0; j < size - i - 1; j++) {
-            //
             if (temp[j] > temp[j + 1]) {
-                //sortowanie bąbelkowo kopii
-                int t = temp[j]; //
-                temp[j] = temp[j + 1]; //
-                temp[j + 1] = t; //
+                int t = temp[j];
+                temp[j] = temp[j + 1];
+                temp[j + 1] = t;
             }
         }
     }
     //funkcja zwraca medianę na podstawie średniej 2 elementów środkowych posortowanej tablicy
-    return (temp[48] + temp[49]) / 2;
+    return ((float) temp[48] + (float) temp[49]) / 2;
 }
 
 int main() {
@@ -114,16 +113,16 @@ int main() {
                 printf("Wartosc min wynosi: %d\n", p_struct->min);
                 break;
             case '4':
-                printf("Wartosc sredniej wynosi: %d\n", p_struct->srednia);
+                printf("Wartosc sredniej wynosi: %.2f\n", p_struct->srednia);
                 break;
             case '5':
-                printf("Wartosc medniany wynosi: %d\n", p_struct->mediana);
+                printf("Wartosc medniany wynosi: %.2f\n", p_struct->mediana);
                 break;
             case '6':
                 printf("Wartosc max wynosi: %d\n", p_struct->max);
                 printf("Wartosc min wynosi: %d\n", p_struct->min);
-                printf("Wartosc sredniej wynosi: %d\n", p_struct->srednia);
-                printf("Wartosc medniany wynosi: %d\n", p_struct->mediana);
+                printf("Wartosc sredniej wynosi: %.2f\n", p_struct->srednia);
+                printf("Wartosc medniany wynosi: %.2f\n", p_struct->mediana);
                 printf("Wygenerowane wartosci losowe:\n");
                 for (i = 0; i < 100; i++) {
                     printf("%d, ", p_struct->mTab[i]);
