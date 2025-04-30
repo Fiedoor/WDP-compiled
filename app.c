@@ -1,3 +1,8 @@
+/*
+ Stanisław Fiedoruk, WCY24KY1S1
+ Zajęcia: 29.04.2025 Rozliczenie: 06.05.2025
+ Temat: Program obliczający dane na podstawie próby losowej
+ */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -69,7 +74,7 @@ int mediana(int *tab, int size) {
         }
     }
     //funkcja zwraca medianę na podstawie średniej 2 elementów środkowych posortowanej tablicy
-    return (temp[49] + temp[50]) / 2;
+    return (temp[48] + temp[49]) / 2;
 }
 
 int main() {
