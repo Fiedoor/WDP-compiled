@@ -24,7 +24,12 @@ void init_queue(Queue *q) {
 
 int is_empty(Queue *q) {
     // printf("Sprawdzenie czy kolejka jest pusta\n");
-    return q->top == NULL;
+//    return q->top == NULL;
+    if(q->top==NULL){
+      return 1;
+    }else{
+        return 0;
+    }
 }
 
 void enqueue(Queue *q, char imie[30], char nazwisko[30]) {
