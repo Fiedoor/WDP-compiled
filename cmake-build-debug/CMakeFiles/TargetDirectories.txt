@@ -1,0 +1,4 @@
+C:/Users/stach/CLionProjects/WDP_laby_5_6/cmake-build-debug/CMakeFiles/app.dir
+C:/Users/stach/CLionProjects/WDP_laby_5_6/cmake-build-debug/CMakeFiles/copy.dir
+C:/Users/stach/CLionProjects/WDP_laby_5_6/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/stach/CLionProjects/WDP_laby_5_6/cmake-build-debug/CMakeFiles/rebuild_cache.dir
