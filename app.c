@@ -1,7 +1,22 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <time.h>
 
+void log(char message[40]) {
+    FILE *file;
+    char datetime[20];
+    strftime(datetime, sizeof(datetime), "%Y-%m-%d %H:%M:%S", localtime(&(time_t){time(NULL)}));
+    file = fopen("log.txt", "a");
+    if (file == NULL) {
+        perror("Blad otwarcia pliku");
+    }
+    fprintf(file, "%s %s\n", datetime, message);
+    fclose(file);
+}
+
+void clear_log() {
+}
 
 void fill_arr(int *a, int n, int max) {
     srand(time(NULL));
@@ -52,7 +67,6 @@ void bubble_sort(int *a, int n) {
 
 
 void selection_sort(int *a, int n) {
-    print_arr(a, n);
     int i, j;
     for (i = 0; i < n - 1; i++) {
         int min = i;
@@ -82,36 +96,25 @@ void insertion_sort(int *a, int n) {
         print_arr(a, n);
     }
 }
-void log(char message[40]) {
-    FILE *file;
-    char datetime[20];
-    strftime(datetime, sizeof(datetime), "%Y-%m-%d %H:%M:%S", localtime(&(time_t){time(NULL)}));
-    file=fopen("log.txt","w");
-    if (file == NULL ) {
-        perror("Blad otwarcia pliku");
-    }
-    fprintf(file,"%s %s\n",datetime,message);
-    fclose(file);
-}
-void clear_log() {
 
-}
 
 int main() {
     log("Uruchomienie aplikacji");
     int arr_size = 0;
     int arr_max_value = 99;
     int opt = 1;
-
     printf("\n=== Podstawowe algorytmy sortowania ===\n");
-
     printf("Podaj rozmiar tablicy\n? > ");
     scanf("%d", &arr_size);
+    char mess[40];
+    sprintf(mess, "Wpisano rozmiar tablicy: %d", arr_size);
+    log(mess);
     int *arr = (int *) malloc(arr_size * sizeof(int));
     while (opt != 0) {
         int opt = app_menu();
         switch (opt) {
             case 1:
+                log("Wybrano sortowanie: bubble sort");
                 fill_arr(arr, arr_size, arr_max_value);
                 printf("We:\n");
                 print_arr(arr, arr_size);
@@ -121,6 +124,7 @@ int main() {
                 print_arr(arr, arr_size);
                 break;
             case 2:
+                log("Wybrano sortowanie: selection sort");
                 fill_arr(arr, arr_size, arr_max_value);
                 printf("We:\n");
                 print_arr(arr, arr_size);
@@ -130,6 +134,7 @@ int main() {
                 print_arr(arr, arr_size);
                 break;
             case 3:
+                log("Wybrano sortowanie: insertion sort");
                 fill_arr(arr, arr_size, arr_max_value);
                 printf("We:\n");
                 print_arr(arr, arr_size);
@@ -142,10 +147,11 @@ int main() {
                 clear_log();
                 break;
             case 0:
+                log("Zamknięcie aplikacji\n");
                 free(arr);
                 return 0;
             default:
                 printf("Nieprawidlowa opcja...\n");
         }
-    };
+    }
 }
