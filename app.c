@@ -21,7 +21,7 @@ void textify(int *arr, int n, char *temp) {
 
 void log(char message[40], int *arr) {
     FILE *file;
-    char datetime[19];
+    char datetime[20];
     strftime(datetime, sizeof(datetime), "%Y-%m-%d %H:%M:%S", localtime(&(time_t){time(NULL)}));
     int *temp = (int *) malloc(arr_size*4);
     temp[0] = '\0';
@@ -32,7 +32,7 @@ void log(char message[40], int *arr) {
     if (file == NULL) {
         perror("Blad otwarcia pliku");
     }
-    fprintf(file, "%s%s %s\n", datetime, message, temp);
+    fprintf(file, "%s %s %s\n", datetime, message, temp);
     fclose(file);
     free(temp);
 }
