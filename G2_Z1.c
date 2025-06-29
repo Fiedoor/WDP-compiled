@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 typedef struct element {
+  	struct element *prev;
     double e;
     struct element *next;
 } NODE;
@@ -15,13 +16,14 @@ void enqueue(kolejka *q, double value) {
         return;
     }
     new_element->e = value;
-    new_element->next = NULL;
+    new_element->next = q->rear;
+    new_element->prev=NULL;
     if (q->front == NULL) {
         q->front = new_element;
         q->rear  = new_element;
     }
     else {
-        q->rear->next = new_element;
+        q->rear->prev = new_element;
         q->rear = new_element;
     }
     printf("Dodano %f do kolejki.\n", value);
@@ -33,7 +35,7 @@ void dequeue(kolejka *q) {
     }
     NODE *temp = q->front;
     printf("Usunięto: %f\n", temp->e);
-    q->front = q->front->next;
+    q->front = q->front->prev;
     if (q->front == NULL) {
         q->rear = NULL;
     }

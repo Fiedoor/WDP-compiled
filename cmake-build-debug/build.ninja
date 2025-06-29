@@ -73,6 +73,39 @@ build g1_z1.exe: C_EXECUTABLE_LINKER__g1_z1_Debug CMakeFiles/g1_z1.dir/G1_Z1.c.o
   TARGET_IMPLIB = libg1_z1.dll.a
   TARGET_PDB = g1_z1.exe.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target yes
+
+
+#############################################
+# Order-only phony target for yes
+
+build cmake_object_order_depends_target_yes: phony || .
+
+build CMakeFiles/yes.dir/bullshit.c.obj: C_COMPILER__yes_unscanned_Debug C$:/Users/stach/CLionProjects/WDP_zaliczenie_wyklad/bullshit.c || cmake_object_order_depends_target_yes
+  DEP_FILE = CMakeFiles\yes.dir\bullshit.c.obj.d
+  FLAGS = -g -std=gnu90 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\yes.dir
+  OBJECT_FILE_DIR = CMakeFiles\yes.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target yes
+
+
+#############################################
+# Link the executable yes.exe
+
+build yes.exe: C_EXECUTABLE_LINKER__yes_Debug CMakeFiles/yes.dir/bullshit.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\yes.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = yes.exe
+  TARGET_IMPLIB = libyes.dll.a
+  TARGET_PDB = yes.exe.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -101,6 +134,8 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 build g1_z1: phony g1_z1.exe
 
+build yes: phony yes.exe
+
 # =============================================================================
 # Folder targets.
 
@@ -109,7 +144,7 @@ build g1_z1: phony g1_z1.exe
 #############################################
 # Folder: C:/Users/stach/CLionProjects/WDP_zaliczenie_wyklad/cmake-build-debug
 
-build all: phony g1_z1.exe
+build all: phony g1_z1.exe yes.exe
 
 # =============================================================================
 # Built-in targets
