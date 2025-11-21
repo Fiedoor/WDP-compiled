@@ -1,0 +1,30 @@
+Zadanie prezentujące podstawowe algorytmy sortowania rozbuduj o komponent dokumentujący korzystanie przez użytkownika z aplikacji (log aplikacji) w postaci pliku tekstowego.
+
+Wymagania:
+Aplikacja dokumentuje użycie każdej funkcjonalności przez użytkownika (w tym również zakończenie działania aplikacji).
+Aplikacja dokumentuje dane, które zostały wygenerowane przy wywołaniu każdej funkcjonalności
+Aplikacja dokumentuje wygenerowane dane, przebieg sortowania oraz wynik w postaci posortowanej tablicy.
+Aplikacja odnotowuje dokładną datę i czas każdego zdarzenia z dokładnością do pojedynczej sekundy.
+
+Przykład:
+2025-05-27 11:08:04 Uruchomienie aplikacji
+log na początku maina
+
+2025-05-27 11:08:12 Rozmiar tablicy: 5
+log po scanf
+2025-05-27 11:08:16 Sortowanie babelkowe
+log w każdej opcji w switchu
+
+2025-05-27 11:08:16 Dane we: [48, 24, 57, 87, 81]
+log na początku każdej funkcji sortowania
+
+2025-05-27 11:08:16 [48, 24, 57, 87, 81]
+2025-05-27 11:08:16 [24, 48, 57, 87, 81]
+2025-05-27 11:08:16 [24, 48, 57, 81, 87]
+log w pętli
+
+2025-05-27 11:08:16 Dane wy: [24, 48, 57, 81, 87]
+log na końcu funkcji
+
+2025-05-27 11:08:23 Zakonczenie pracy aplikacji
+log w 0 w switchu
