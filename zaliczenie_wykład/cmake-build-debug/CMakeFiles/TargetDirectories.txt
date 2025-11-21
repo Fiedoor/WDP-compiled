@@ -1,0 +1,4 @@
+C:/Users/stach/CLionProjects/WDP_zaliczenie_wyklad/cmake-build-debug/CMakeFiles/g1_z1.dir
+C:/Users/stach/CLionProjects/WDP_zaliczenie_wyklad/cmake-build-debug/CMakeFiles/yes.dir
+C:/Users/stach/CLionProjects/WDP_zaliczenie_wyklad/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/stach/CLionProjects/WDP_zaliczenie_wyklad/cmake-build-debug/CMakeFiles/rebuild_cache.dir
